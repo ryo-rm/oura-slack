@@ -17,6 +17,7 @@ const main = async () => {
   const sleepStatus = sleep.sleep[0];
   const readinessScore = readiness.readiness[0].score;
   await slackClient.users.profile.set({
+    user: 'REPLACE_ME',
     profile: `{
       "status_emoji": ":ring:",
       "status_text": "Sleep Score: ${sleepStatus.score}, Sleep Total: ${(sleepStatus.total / 3600).toFixed(2)}h, Readiness Score: ${readinessScore}"
